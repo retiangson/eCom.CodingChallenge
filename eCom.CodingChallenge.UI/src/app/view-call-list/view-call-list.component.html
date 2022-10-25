@@ -1,0 +1,40 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4><b>Call List</b></h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#" routerLink="/Home" class="btn btn-success back">
+                            <i class='fas fa-arrow-circle-left'></i>Back</a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover table-bordered table-content">
+                <thead>
+                    <tr class="center-align">
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Home Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ContactView of callListView" class="center-align">
+                        <td>{{ ContactView.Name.First }}</td>
+                        <td>{{ ContactView.Name.Middle }}</td>
+                        <td>{{ ContactView.Name.Last }}</td>
+                        <td>{{ ContactView.Name.Email }}</td>
+                        <td>{{ ContactView.Phone.Number}}</td>
+                      </tr>
+                    <tr>
+                        <td *ngIf="callListView.length == 0" colspan="6">No Contact Found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
